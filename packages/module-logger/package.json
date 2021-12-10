@@ -1,0 +1,10 @@
+{
+  "name": "@books-api/module-logger",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "dependencies": {
+    "winston": "^3.3.3"
+  }
+}

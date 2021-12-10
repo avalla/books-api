@@ -1,0 +1,10 @@
+.idea
+.yarn
+!.yarn/releases/
+!.yarn/plugins
+.env
+build
+node_modules
+yarn-error.log
+.jest-cache
+.eslintcache

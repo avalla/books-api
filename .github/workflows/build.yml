@@ -1,0 +1,32 @@
+name: Test
+
+env:
+  CI: true
+  ISOLATE: true
+  GIT_DEPTH: 0
+  BABEL_DISABLE_CACHE: '1'
+  NODE_ENV: 'test'
+  NYTIMES_KEY: 'foo'
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: yarn install
+      - name: Testing
+        run: yarn test --forceExit

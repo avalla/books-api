@@ -1,0 +1,6 @@
+.idea
+.yarn
+**/*.test.js
+**/*.spec.js
+**/node_modules/**
+**/build/**/*

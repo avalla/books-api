@@ -1,0 +1,36 @@
+{
+  "name": "@books-api/web-backend",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@books-api/module-logger": "^1.0.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "node-fetch": "^2.6.6"
+  },
+  "devDependencies": {
+    "fetch-mock-jest": "^1.5.1",
+    "jest": "^27.4.3",
+    "nodemon": "^2.0.15",
+    "pkg": "^5.3.3"
+  },
+  "scripts": {
+    "release:linux": "rm -rf build && mkdir build && pkg package.json --out-path build -t node14-linux-x64",
+    "release:mac": "rm -rf build && mkdir build && pkg package.json --out-path build -t node14-macos-x64",
+    "release:win": "rm -rf build && mkdir build && pkg package.json --out-path build -t node14-win-x64",
+    "start": "nodemon --inspect=127.0.0.1:9229 --watch '../../packages/module-*/*' --watch './src/**/*' --watch './index.js' index.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "jest": {
+    "displayName": "web:backend",
+    "testEnvironment": "node",
+    "verbose": true
+  },
+  "bin": "index.js"
+}
